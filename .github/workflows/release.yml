@@ -1,0 +1,43 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*' # 仅在推送 v 开头的 tag 时触发 (例如 v1.0.0, v1.2.3)
+
+jobs:
+  build-release:
+    runs-on: windows-latest # 使用最新的 Windows 服务器
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive' # 拉取 ffmpeg 子模块
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 使用 Node.js 20
+          cache: 'npm' # 缓存 npm 依赖，加快后续构建速度
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run dist:win
+        env:
+          # 防止在CI环境中寻找证书出错
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          # 使用 tag 的消息作为 Release 的说明
+          body_path: ""
+          # 将 release 目录下的 .zip 文件和 .exe 安装包上传
+          files: |
+            release/*.zip
+            release/*.exe
+          # GITHUB_TOKEN 是 GitHub Actions 自动提供的，用于授权
+          token: ${{ secrets.GITHUB_TOKEN }} 
