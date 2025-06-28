@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive' # 拉取 ffmpeg 子模块
+          submodules: false # 不再需要拉取子模块
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -23,6 +23,15 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Download FFmpeg
+        run: |
+          New-Item -ItemType Directory -Force -Path "./ffmpeg"
+          Invoke-WebRequest -Uri "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip" -OutFile "./ffmpeg.zip"
+          Expand-Archive -Path "./ffmpeg.zip" -DestinationPath "./ffmpeg-build"
+          Move-Item -Path "./ffmpeg-build/*/bin/*" -Destination "./ffmpeg"
+          Remove-Item -Path "./ffmpeg.zip"
+          Remove-Item -Path "./ffmpeg-build" -Recurse
 
       - name: Build the application
         run: npm run dist:win
