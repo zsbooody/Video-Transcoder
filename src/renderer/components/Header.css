@@ -1,0 +1,39 @@
+/**
+ * Header组件样式
+ */
+
+.app-header {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  z-index: 100;
+}
+
+.header-content {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+} 

@@ -1,0 +1,19 @@
+/**
+ * SettingsModal组件样式
+ */
+
+.settings-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.settings-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.settings-modal .ant-input-group-addon {
+  padding: 0;
+}
+
+.settings-modal .ant-input-group-addon .ant-btn {
+  border: none;
+} 

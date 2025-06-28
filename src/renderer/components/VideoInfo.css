@@ -1,0 +1,24 @@
+/**
+ * VideoInfo组件样式
+ */
+
+.video-info-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.video-info-card .ant-descriptions-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.video-info-card .ant-descriptions-item-label {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.video-info-card .ant-descriptions-item-content {
+  color: var(--text-color);
+} 

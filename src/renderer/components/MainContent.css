@@ -1,0 +1,62 @@
+/**
+ * MainContent组件样式
+ */
+
+.main-content {
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-content-empty {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.content-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.progress-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Ant Design 覆盖样式 */
+.main-content .ant-tabs-nav {
+  margin-bottom: 24px;
+}
+
+.main-content .ant-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.main-content .ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.main-content .ant-input-group-addon {
+  padding: 0;
+}
+
+.main-content .ant-input-group-addon .ant-btn {
+  border: none;
+} 

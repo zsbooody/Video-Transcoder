@@ -1,0 +1,92 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+release/
+out/
+*.unpacked/
+
+# Development
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+cache/
+temp/
+tmp/
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# TypeScript
+*.tsbuildinfo
+
+# Electron
+electron-builder.yml
+electron-builder.json
+
+# Application specific
+*.zip
+*.7z
+*.rar
+*.tar.gz
+便携版说明.txt
+HARDWARE_ACCELERATION_REPORT.md
+test-*.js
+validate-*.js
+check-*.ps1
+create-*.ps1
+verify-*.ps1
+*-installer.ps1
+安装*.bat
+安装*.md
+启动*.bat
+
+# FFmpeg binaries (too large for git)
+ffmpeg/ffmpeg.exe
+ffmpeg/ffprobe.exe
+ffmpeg/ffplay.exe
+
+# But include FFmpeg source files
+!ffmpeg/doc/
+!ffmpeg/libavcodec/
+!ffmpeg/libavformat/
+!ffmpeg/libavutil/
+!ffmpeg/libswscale/
+!ffmpeg/libswresample/
+!ffmpeg/configure
+!ffmpeg/Makefile
+!ffmpeg/LICENSE*
+!ffmpeg/README* 
