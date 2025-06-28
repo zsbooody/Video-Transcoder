@@ -12,8 +12,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          submodules: false # 不再需要拉取子模块
+        # We are relying on the default behavior where submodules are not checked out.
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
